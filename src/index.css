@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Manrope:wght@400..800&family=Noto+Serif:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+  /* Color Palette - from DESIGN.md */
+  --color-surface: #faf9f6; /* Ivory base */
+  --color-surface-dim: #dbdad7;
+  --color-surface-container-low: #f4f3f1;
+  --color-surface-container: #efeeeb;
+  --color-surface-container-high: #e9e8e5;
+  --color-cream: #F5F5DC; /* Cream container */
+  
+  --color-on-surface: #2D2926; /* Charcoal-sepia */
+  --color-on-surface-variant: #424750;
+  
+  --color-primary: #1c60a3;
+  --color-primary-container: #7eb6ff; /* Forget-me-not Blue */
+  --color-on-primary-container: #004680;
+  
+  --color-secondary: #81515a;
+  --color-secondary-container: #fdbec9; /* Soft Pink */
+  --color-on-secondary-container: #7a4a54;
+  
+  /* Typography */
+  --font-display: 'Noto Serif', serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-handwriting: 'Caveat', cursive;
+
+  /* Spacing */
+  --space-base: 8px;
+  --space-section-gap: 120px;
+  --space-container: 40px;
+  --space-sm: 12px;
+  --space-md: 24px;
+  --space-lg: 48px;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows - Ambient shadows */
+  --shadow-soft: 0 8px 24px -4px rgba(126, 182, 255, 0.08), 0 4px 8px -4px rgba(126, 182, 255, 0.04);
+  --shadow-hover: 0 16px 32px -8px rgba(126, 182, 255, 0.12), 0 8px 16px -8px rgba(126, 182, 255, 0.08);
+}
+
+/* Resets & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-on-surface);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-container);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-container);
+}
+
+.section {
+  padding: var(--space-section-gap) 0;
+  position: relative;
+}
+
+.handwriting {
+  font-family: var(--font-handwriting);
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Layout - Asymmetrical */
+.grid-asymmetric {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-md);
+}
+
+.col-12 { grid-column: span 12; }
+.col-6 { grid-column: span 6; }
+
+@media (min-width: 768px) {
+  .col-md-5 { grid-column: span 5; }
+  .col-md-6 { grid-column: span 6; }
+  .col-md-7 { grid-column: span 7; }
+  .col-md-12 { grid-column: span 12; }
+}
+
+/* Cards & Containers */
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.paper-container {
+  background-color: var(--color-cream);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.02); /* Slight vignette to feel like paper */
+}
+
+/* Global Background Enhancements */
+.dreamy-auras {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: var(--color-background);
+}
+
+.aura {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.7;
+  animation: floatAura 25s infinite alternate ease-in-out;
+}
+
+.aura-pink {
+  width: 70vw;
+  height: 70vw;
+  background: radial-gradient(circle, rgba(255, 209, 220, 0.8) 0%, rgba(255, 209, 220, 0) 70%);
+  top: -20%;
+  left: -20%;
+  animation-delay: 0s;
+}
+
+.aura-blue {
+  width: 80vw;
+  height: 80vw;
+  background: radial-gradient(circle, rgba(126, 182, 255, 0.6) 0%, rgba(126, 182, 255, 0) 70%);
+  bottom: -30%;
+  right: -20%;
+  animation-delay: -12s;
+}
+
+@keyframes floatAura {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(8%, 12%) scale(1.1); }
+}
+
+/* Scrapbook Elements */
+.scrapbook-element {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  user-select: none;
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+}
+
+@media (max-width: 768px) {
+  .scrapbook-element {
+    transform: scale(0.6) !important;
+  }
+  .scrapbook-hide-mobile {
+    display: none !important;
+  }
+}
+
+/* TagCloud 3D Sphere */
+.tagcloud-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+}
+.tagcloud-wrap .tagcloud {
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: none !important;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.tagcloud-wrap .tagcloud:active {
+  cursor: none !important;
+}
+.tagcloud-wrap .tagcloud img {
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+/* Typography styles */
+.display-lg {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .display-lg {
+    font-size: 72px;
+  }
+}
+
+.headline-md {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.label-caps {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Forms */
+.input-minimalist {
+  width: 100%;
+  padding: var(--space-sm) 0;
+  border: none;
+  border-bottom: 1px solid var(--color-on-surface-variant);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-on-surface);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-minimalist:focus {
+  border-bottom-color: var(--color-primary);
+}
+
+/* Background motifs wrapper */
+.floral-bg {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.15;
+  pointer-events: none;
+}
