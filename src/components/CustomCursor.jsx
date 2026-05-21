@@ -15,10 +15,26 @@ const CustomCursor = () => {
       }
     };
 
+    const handleMouseOver = (e) => {
+      if (primaryCursorRef.current) {
+        if (e.target.closest('a, button, [role="button"], input[type="submit"], input[type="button"], .clickable')) {
+          primaryCursorRef.current.src = "/newElements/custom cursor click.png";
+          primaryCursorRef.current.style.transform = 'translate(-20%, -20%) scaleX(1)';
+          primaryCursorRef.current.style.width = '80px';
+        } else {
+          primaryCursorRef.current.src = "/newElements/custom cursor.png";
+          primaryCursorRef.current.style.transform = 'translate(-20%, -20%) scaleX(-1)';
+          primaryCursorRef.current.style.width = '56px';
+        }
+      }
+    };
+
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('mouseover', handleMouseOver, { passive: true });
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseover', handleMouseOver);
     };
   }, []);
 

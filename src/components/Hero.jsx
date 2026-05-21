@@ -35,22 +35,43 @@ const Hero = () => {
             Information Systems & Business Strategy
           </p>
           
-          <motion.a 
-            href="#about"
-            className="label-caps"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            style={{ 
-              display: 'inline-block',
-              padding: 'var(--space-md) var(--space-lg)', 
-              backgroundColor: 'var(--color-primary)', 
-              color: 'white', 
-              borderRadius: 'var(--radius-full)',
-              boxShadow: 'var(--shadow-soft)'
-            }}
-          >
-            Walk through the Garden
-          </motion.a>
+          <div style={{ display: 'flex', gap: 'var(--space-md)', justifyContent: 'center' }}>
+            <motion.a 
+              href="#about"
+              className="label-caps"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{ 
+                display: 'inline-block',
+                padding: 'var(--space-md) var(--space-lg)', 
+                backgroundColor: 'var(--color-primary)', 
+                color: 'white', 
+                borderRadius: 'var(--radius-full)',
+                boxShadow: 'var(--shadow-soft)'
+              }}
+            >
+              Walk through the Garden
+            </motion.a>
+            <motion.a 
+              href="https://binusianorg-my.sharepoint.com/personal/aisyah_algebra_binus_ac_id/_layouts/15/guestaccess.aspx?share=IQCl-WAviwZRQY00xPcdmbPKAYPisPsbxkAY6VxaO2O7rCI&e=JBrfZX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="label-caps"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{ 
+                display: 'inline-block',
+                padding: 'var(--space-md) var(--space-lg)', 
+                backgroundColor: 'transparent',
+                border: '2px solid var(--color-primary)',
+                color: 'var(--color-primary)', 
+                borderRadius: 'var(--radius-full)',
+                boxShadow: 'var(--shadow-soft)'
+              }}
+            >
+              View CV
+            </motion.a>
+          </div>
         </motion.div>
       </div>
     </section>

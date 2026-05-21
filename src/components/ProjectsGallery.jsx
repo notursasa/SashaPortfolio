@@ -75,7 +75,7 @@ const ProjectsGallery = () => {
             >
               <div className="card" style={{ padding: 'var(--space-lg)', height: '100%', position: 'relative' }}>
                 {index === 1 && (
-                  <img src="/newElements/cat peeking.png" alt="" className="scrapbook-element" style={{ top: '-40px', right: '10px', width: '80px' }} />
+                  <img src="/newElements/cat peeking.png" alt="" className="scrapbook-element" style={{ top: '10px', right: '10px', width: '80px' }} />
                 )}
                 {index === 2 && (
                   <img src="/newElements/bowtie.png" alt="" className="scrapbook-element" style={{ bottom: '10px', right: '10px', width: '50px', transform: 'rotate(15deg)' }} />

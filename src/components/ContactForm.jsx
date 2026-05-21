@@ -1,9 +1,37 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const ContactForm = () => {
-  const handleSubmit = (e) => {
+  const [status, setStatus] = useState(''); // '', 'submitting', 'success', 'error'
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you! Your message has been sent to the Lyrical Garden.");
+    setStatus('submitting');
+    
+    const formData = new FormData(e.target);
+    // Web3Forms Access Key
+    formData.append("access_key", "ac53f806-8ccc-42a1-90d2-c8b48dd20cc4");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus('success');
+        e.target.reset(); // clear the form
+        setTimeout(() => setStatus(''), 5000); // clear success message after 5 seconds
+      } else {
+        console.error("Error from Web3Forms", data);
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error("Fetch error", error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -28,14 +56,15 @@ const ContactForm = () => {
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-md)' }}>
             <div className="grid-asymmetric">
               <div className="col-12 col-md-6">
-                <input type="text" placeholder="YOUR NAME" className="input-minimalist" required />
+                <input type="text" name="name" placeholder="YOUR NAME" className="input-minimalist" required />
               </div>
               <div className="col-12 col-md-6">
-                <input type="email" placeholder="EMAIL ADDRESS" className="input-minimalist" required />
+                <input type="email" name="email" placeholder="EMAIL ADDRESS" className="input-minimalist" required />
               </div>
             </div>
             
             <textarea 
+              name="message"
               placeholder="YOUR MESSAGE" 
               className="input-minimalist" 
               rows="4" 
@@ -48,17 +77,27 @@ const ContactForm = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit" 
+                disabled={status === 'submitting'}
                 className="label-caps"
                 style={{ 
                   padding: 'var(--space-sm) var(--space-lg)', 
-                  backgroundColor: 'transparent',
+                  backgroundColor: status === 'success' ? 'var(--color-primary)' : 'transparent',
                   border: '1px solid var(--color-primary)',
-                  color: 'var(--color-primary)',
-                  borderRadius: 'var(--radius-full)'
+                  color: status === 'success' ? 'white' : 'var(--color-primary)',
+                  borderRadius: 'var(--radius-full)',
+                  opacity: status === 'submitting' ? 0.7 : 1,
+                  cursor: status === 'submitting' ? 'not-allowed' : 'pointer',
+                  transition: 'all 0.3s ease'
                 }}
               >
-                Deliver Message
+                {status === 'submitting' ? 'Sending...' : status === 'success' ? 'Message Sent!' : 'Deliver Message'}
               </motion.button>
+              
+              {status === 'error' && (
+                <p style={{ color: 'red', marginTop: 'var(--space-sm)' }}>
+                  Something went wrong. Please try again.
+                </p>
+              )}
             </div>
           </form>
         </motion.div>
