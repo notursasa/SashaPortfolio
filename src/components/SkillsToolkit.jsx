@@ -10,18 +10,18 @@ const SkillsToolkit = () => {
     containerRef.current.innerHTML = '';
 
     const texts = [
-      `<img src="/skillElements/CSS3_logo.svg.png" width="60" />`,
-      `<img src="/skillElements/HTML5_logo_and_wordmark.svg.png" width="60" />`,
-      `<img src="/skillElements/Java_logo_PNG10.png" width="60" />`,
-      `<img src="/skillElements/Javascript_badge.svg.png" width="60" />`,
-      `<img src="/skillElements/New_Power_BI_Logo.svg.png" width="60" />`,
-      `<img src="/skillElements/React-icon.svg.png" width="60" />`,
-      `<img src="/skillElements/Typescript_logo_2020.svg.png" width="60" />`,
-      `<img src="/skillElements/Vitejs-logo.svg.png" width="60" />`,
-      `<img src="/skillElements/figma-logo-icon-figma-app-editable-transparent-background-premium-social-media-design-for-digital-download-free-png.webp" width="60" />`,
-      `<img src="/skillElements/microsoft sql server.svg" width="60" />`,
-      `<img src="/skillElements/PHP-logo.svg.png" width="60" />`,
-      `<img src="/skillElements/Octicons-mark-github.svg" width="60" />`
+      `<img src="/newElements/skillElements/CSS3_logo.svg.png" width="60" />`,
+      `<img src="/newElements/skillElements/HTML5_logo_and_wordmark.svg.png" width="60" />`,
+      `<img src="/newElements/skillElements/Java_logo_PNG10.png" width="60" />`,
+      `<img src="/newElements/skillElements/Javascript_badge.svg.png" width="60" />`,
+      `<img src="/newElements/skillElements/New_Power_BI_Logo.svg.png" width="60" />`,
+      `<img src="/newElements/skillElements/React-icon.svg.png" width="60" />`,
+      `<img src="/newElements/skillElements/Typescript_logo_2020.svg.png" width="60" />`,
+      `<img src="/newElements/skillElements/Vitejs-logo.svg.png" width="60" />`,
+      `<img src="/newElements/skillElements/figma-logo-icon-figma-app-editable-transparent-background-premium-social-media-design-for-digital-download-free-png.webp" width="60" />`,
+      `<img src="/newElements/skillElements/microsoft sql server.svg" width="60" />`,
+      `<img src="/newElements/skillElements/PHP-logo.svg.png" width="60" />`,
+      `<img src="/newElements/skillElements/Octicons-mark-github.svg" width="60" />`
     ];
 
     const options = {
