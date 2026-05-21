@@ -3,27 +3,53 @@ import { motion } from 'framer-motion';
 const projectsData = [
   {
     id: 1,
-    title: 'Market Expansion Strategy',
-    category: 'Business Strategy',
-    description: 'A comprehensive feasibility study and market entry strategy for a tech startup expanding into Southeast Asia.',
-    tags: ['Market Research', 'Financial Modeling', 'SWOT'],
-    rotation: '-1deg'
+    title: 'GigitAja (Sustainable Food Waste Platform)',
+    category: 'Sustainable Business / UI/UX Prototyping',
+    description: 'Spearheaded the core business vision and end-to-end execution of a tech initiative addressing food waste and SDGs (2, 12, 13) in Indonesia. Acted as the mastermind behind the sustainable business model, from initial ideation and market gap identification to formulating the comprehensive business plan. Led cross-discipline collaboration to translate this core business vision into a high-fidelity interactive web prototype demonstrating a complete purchase flow.',
+    tags: ['Sustainable Business', 'UI/UX Prototyping', 'Business Strategy', 'Project Management', 'SDGs'],
+    rotation: '-1deg',
+    link: 'https://canva.link/uhca51olnsou5fu',
+    linkType: 'Canva Booklet'
   },
   {
     id: 2,
-    title: 'Enterprise Architecture Redesign',
-    category: 'Information Systems',
-    description: 'Streamlining internal workflows and data pipelines for a mid-sized logistics company using modern cloud infrastructure.',
-    tags: ['System Analysis', 'Cloud Infrastructure', 'UML'],
-    rotation: '2deg'
+    title: 'Senusa Kopi - POS & Inventory Management System',
+    category: 'Web Application / Information Systems',
+    description: 'A comprehensive web-based Point of Sale (POS) and inventory management system designed for coffee shops. Engineered complex master data management, automated stock deduction through recipe linking, role-based authorization, and real-time business performance reporting.',
+    tags: ['PHP', 'MySQL', 'POS System', 'Inventory Management', 'Web Development'],
+    rotation: '2deg',
+    link: 'https://github.com/notursasa/SenusaKopiIndonesia',
+    linkType: 'GitHub'
   },
   {
     id: 3,
-    title: 'Customer Loyalty App',
-    category: 'Digital Innovation',
-    description: 'Designing a gamified loyalty program interface and backend architecture to increase customer retention by 30%.',
-    tags: ['UX Design', 'Product Management', 'Data Analytics'],
-    rotation: '-2deg'
+    title: 'Manajemen Bank Sampah (Waste Bank Management)',
+    category: 'Desktop Application / Software Engineering',
+    description: 'A JavaFX desktop application integrated with MariaDB to streamline waste deposit operations and promote environmental sustainability. Features include secure user authentication (SHA-256), a gamified reward redemption system, and automated real-time transaction notifications via Discord Webhook.',
+    tags: ['Java', 'JavaFX', 'MariaDB', 'Desktop App', 'Discord Webhook'],
+    rotation: '-2deg',
+    link: 'https://github.com/notursasa/ManajemenBankSampah',
+    linkType: 'GitHub'
+  },
+  {
+    id: 4,
+    title: 'CareConnect Platform',
+    category: 'Full-stack Development / Information Systems',
+    description: 'Developed a comprehensive web application using low-code technology to seamlessly connect service providers with consumers. Managed end-to-end development, from designing an intuitive user interface to implementing backend database integration.',
+    tags: ['Full-stack Development', 'Mendix', 'Low-code', 'Web Application', 'UI/UX'],
+    rotation: '1deg',
+    link: null,
+    linkType: null
+  },
+  {
+    id: 5,
+    title: 'Arthamas Bengkel Information System',
+    category: 'System Design / UI/UX Prototyping',
+    description: 'Developed a comprehensive information system for a motorcycle repair shop to digitize manual operations, covering spare part inventory, service bookings, complaints handling, and financial reporting. Acted as the sole UI/UX Designer, engineering the complete visual experience from low-fidelity wireframes to a high-fidelity interactive prototype. Simultaneously served as the System Designer, architecting rigorous technical documentation including Use Case Descriptions, Activity Diagrams, System Sequence Diagrams (SSD), and Entity-Relationship Diagrams (ERD).',
+    tags: ['System Design', 'UI/UX Design', 'Figma', 'UML Modeling', 'ERD', 'Business Application'],
+    rotation: '-1.5deg',
+    link: 'https://www.figma.com/proto/chXYOBbMRcP3FgtxXcRgSA/LEC-ABAD?node-id=56-3637&t=S59YgGidDbGkARGb-1',
+    linkType: 'Figma'
   }
 ];
 
@@ -74,6 +100,29 @@ const ProjectsGallery = () => {
                     </span>
                   ))}
                 </div>
+
+                {project.link && (
+                  <div style={{ marginTop: 'var(--space-lg)' }}>
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="handwriting"
+                      style={{ 
+                        color: 'var(--color-primary)', 
+                        textDecoration: 'none', 
+                        display: 'inline-flex', 
+                        alignItems: 'center', 
+                        gap: '8px', 
+                        fontSize: '1.2rem',
+                        borderBottom: '2px dashed var(--color-primary)',
+                        paddingBottom: '2px'
+                      }}
+                    >
+                      <span>View {project.linkType} &rarr;</span>
+                    </a>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

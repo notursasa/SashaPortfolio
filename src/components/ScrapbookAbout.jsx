@@ -33,12 +33,10 @@ const ScrapbookAbout = () => {
           <div className="col-12 col-md-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingRight: '15%', paddingLeft: '0%' }}>
             <h2 className="headline-md" style={{ marginBottom: 'var(--space-md)' }}>The Cheerful Scholar</h2>
             <p style={{ marginBottom: 'var(--space-md)' }}>
-              Hello! I'm Sasha, a Digital Business Innovation student pursuing a Dual Degree at Binus University. 
-              My journey lies at the intersection of rigorous technical systems and vibrant business strategies. 
+              Hello! I'm Sasha, a dynamic and analytical Digital Business Innovation student pursuing a dual degree in Information Systems and Business at Binus University. I possess a unique blend of technical system engineering skills and strategic business acumen.
             </p>
             <p style={{ marginBottom: 'var(--space-md)' }}>
-              I believe that the best solutions are not just functional, but profoundly human and artistic. 
-              Like a well-composed piece of jazz music, good architecture requires intuition, flow, and structural integrity.
+              With hands-on experience in full-stack development, comprehensive system design (UML, ERD), UI/UX prototyping, and advanced business analysis (BMC, SWOT, PESTEL), I am adept at bridging the gap between technical execution and business viability. Furthermore, I bring proven leadership and communication skills gained through active roles in organizational external relations.
             </p>
             <p className="handwriting" style={{ fontSize: '2rem' }}>
               Let's create something beautiful.
