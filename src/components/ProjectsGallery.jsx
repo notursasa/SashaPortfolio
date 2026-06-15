@@ -2,6 +2,18 @@ import { motion } from 'framer-motion';
 
 const projectsData = [
   {
+    id: 6,
+    title: 'PETRONAS Strategic Evolution & Super-App Ecosystem',
+    category: 'Global Corporate Strategy / UI/UX Prototyping',
+    description: "Conducted a comprehensive 5-year longitudinal analysis (2020–2025) of corporate reports to evaluate the company's Global Value Chain, phases of internationalization, and strategic partnerships. Applied advanced analytical frameworks (OLI Paradigm, PESTEL, SWOT, Porter's Five Forces) to assess global market positioning. Based on these data-driven insights, engineered growth hacking strategies (B2B co-marketing, geofence push notifications, gamification) and translated the strategic vision into a functional interactive web prototype for a new digital super-app ecosystem (Setel).",
+    tags: ['Global Strategy', 'Growth Hacking', 'UI/UX Prototyping', 'Business Analytics', 'Super-App'],
+    rotation: '1deg',
+    links: [
+      { url: 'https://setel-super-apps-prototype.vercel.app/', label: 'Prototype' },
+      { url: 'https://canva.link/junmc4ko549e6f1', label: 'Analysis (Deck)' }
+    ]
+  },
+  {
     id: 1,
     title: 'GigitAja (Sustainable Food Waste Platform)',
     category: 'Sustainable Business / UI/UX Prototyping',
@@ -60,7 +72,7 @@ const ProjectsGallery = () => {
       <img src="/newElements/tulip soft pink.png" alt="" className="scrapbook-element" style={{ bottom: '10%', right: '-30px', width: '250px', transform: 'rotate(-15deg)' }} />
 
       <div className="container">
-        <h2 className="display-lg text-center" style={{ marginBottom: 'var(--space-lg)' }}>Projects</h2>
+        <h2 className="display-lg text-center" style={{ marginBottom: 'var(--space-lg)' }}>Featured Projects</h2>
         
         <div className="grid-asymmetric">
           {projectsData.map((project, index) => (
@@ -101,26 +113,30 @@ const ProjectsGallery = () => {
                   ))}
                 </div>
 
-                {project.link && (
-                  <div style={{ marginTop: 'var(--space-lg)' }}>
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="handwriting"
-                      style={{ 
-                        color: 'var(--color-primary)', 
-                        textDecoration: 'none', 
-                        display: 'inline-flex', 
-                        alignItems: 'center', 
-                        gap: '8px', 
-                        fontSize: '1.2rem',
-                        borderBottom: '2px dashed var(--color-primary)',
-                        paddingBottom: '2px'
-                      }}
-                    >
-                      <span>View {project.linkType} &rarr;</span>
-                    </a>
+                {/* Links */}
+                {(project.links || (project.link ? [{url: project.link, label: project.linkType}] : [])).length > 0 && (
+                  <div style={{ marginTop: 'var(--space-lg)', display: 'flex', flexWrap: 'wrap', gap: 'var(--space-md)' }}>
+                    {(project.links || (project.link ? [{url: project.link, label: project.linkType}] : [])).map((linkObj, i) => (
+                      <a 
+                        key={i}
+                        href={linkObj.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="handwriting"
+                        style={{ 
+                          color: 'var(--color-primary)', 
+                          textDecoration: 'none', 
+                          display: 'inline-flex', 
+                          alignItems: 'center', 
+                          gap: '8px', 
+                          fontSize: '1.2rem',
+                          borderBottom: '2px dashed var(--color-primary)',
+                          paddingBottom: '2px'
+                        }}
+                      >
+                        <span>View {linkObj.label} &rarr;</span>
+                      </a>
+                    ))}
                   </div>
                 )}
               </div>
