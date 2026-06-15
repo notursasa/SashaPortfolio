@@ -53,7 +53,7 @@ const Hero = () => {
               Walk through the Garden
             </motion.a>
             <motion.a 
-              href="https://binusianorg-my.sharepoint.com/personal/aisyah_algebra_binus_ac_id/_layouts/15/guestaccess.aspx?share=IQCl-WAviwZRQY00xPcdmbPKAYPisPsbxkAY6VxaO2O7rCI&e=JBrfZX"
+              href="https://drive.google.com/file/d/1TwqmC8mrxHOcImQw23bDi7cgNdAamsEz/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="label-caps"

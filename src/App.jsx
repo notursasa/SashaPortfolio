@@ -79,7 +79,7 @@ function App() {
           <a href="#projects" className="label-caps" style={{ color: 'var(--color-on-surface-variant)' }}>Projects</a>
           <a href="#skills" className="label-caps" style={{ color: 'var(--color-on-surface-variant)' }}>Skills</a>
           <a href="#contact" className="label-caps" style={{ color: 'var(--color-on-surface-variant)' }}>Contact</a>
-          <a href="https://binusianorg-my.sharepoint.com/personal/aisyah_algebra_binus_ac_id/_layouts/15/guestaccess.aspx?share=IQCl-WAviwZRQY00xPcdmbPKAYPisPsbxkAY6VxaO2O7rCI&e=JBrfZX" target="_blank" rel="noopener noreferrer" className="label-caps" style={{ color: 'var(--color-primary)', fontWeight: 'bold' }}>CV</a>
+          <a href="https://drive.google.com/file/d/1TwqmC8mrxHOcImQw23bDi7cgNdAamsEz/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="label-caps" style={{ color: 'var(--color-primary)', fontWeight: 'bold' }}>CV</a>
         </nav>
       </header>
 
