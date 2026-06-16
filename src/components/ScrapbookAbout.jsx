@@ -19,7 +19,7 @@ const ScrapbookAbout = () => {
           <div className="col-12 col-md-5">
             <div className="card" style={{ padding: '16px 16px 48px', backgroundColor: '#fff', transform: 'rotate(-2deg)' }}>
               <img 
-                src="/images/sasha_portrait.png" 
+                src="/images/profile.jpg" 
                 alt="Aisyah Sasha Raissa Algebra" 
                 style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-sm)' }}
               />
